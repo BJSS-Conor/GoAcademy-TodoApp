@@ -1,7 +1,9 @@
 **Introduction**
+
 This is my Todo app for the GoLang Academy. 
 
 **App Structure**
+
 The app is comprised of:
 - [cmd/server.go] A web server responsible for routing api URIs to an appropriate handler and hosting the web frontend.
 - [cmd/web] The frontend web app. Simple web page that allows a user to create, mark as complete, and delete Todo items from a Todo list.
