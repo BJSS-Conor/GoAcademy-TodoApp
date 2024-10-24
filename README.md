@@ -1,8 +1,8 @@
-**Introduction**
+## Introduction
 
 This is my Todo app for the GoLang Academy. 
 
-**App Structure**
+## App Structure
 
 The app is comprised of:
 - [cmd/server.go] A web server responsible for routing api URIs to an appropriate handler and hosting the web frontend.
