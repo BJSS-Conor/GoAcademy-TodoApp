@@ -12,6 +12,10 @@ this is to have it so multiple read requests can happen at once, speeding up pro
 The purpose of the contracts is to make sure that the data being passed into any requests are consistent. For example, when
 making a new todo item, the 'CreateContract' is used to pass in the correct information.
 
+## Mocks
+
+Mock data service used for unit testing the API handlers.
+
 ## Responses
 
 Responses are used to make sure the responses returned are consistent.
