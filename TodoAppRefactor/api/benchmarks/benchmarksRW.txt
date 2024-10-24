@@ -1,0 +1,39 @@
+Server started on: 127.0.0.1:65381
+goos: windows
+goarch: amd64
+pkg: todoApp/api/benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+BenchmarkRandomApiCalls-8   	Server started on: 127.0.0.1:65382
+Server started on: 127.0.0.1:65383
+Server started on: 127.0.0.1:65384
+Server started on: 127.0.0.1:65385
+Server started on: 127.0.0.1:65387
+ 2675160	       564.8 ns/op
+PASS
+ok  	todoApp/api/benchmarks	4.958s
+
+Server started on: 127.0.0.1:65403
+goos: windows
+goarch: amd64
+pkg: todoApp/api/benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+BenchmarkRandomApiCalls-8   	Server started on: 127.0.0.1:65404
+Server started on: 127.0.0.1:65405
+Server started on: 127.0.0.1:65406
+Server started on: 127.0.0.1:65407
+ 2167012	       701.8 ns/op
+PASS
+ok  	todoApp/api/benchmarks	4.416s
+
+Server started on: 127.0.0.1:65409
+goos: windows
+goarch: amd64
+pkg: todoApp/api/benchmarks
+cpu: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+BenchmarkRandomApiCalls-8   	Server started on: 127.0.0.1:65410
+Server started on: 127.0.0.1:65411
+Server started on: 127.0.0.1:65412
+Server started on: 127.0.0.1:65413
+ 2392146	       457.9 ns/op
+PASS
+ok  	todoApp/api/benchmarks	1.808s

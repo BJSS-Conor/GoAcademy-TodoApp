@@ -1,0 +1,73 @@
+<head>
+    <link rel="stylesheet" href="../stylesheets/home.css">
+</head>
+
+<div style="margin: auto; width: 462px; height: 693px; background-image: url('../../images/Todo_ScrollImage.jpg');"> 
+    <h1 class="title">Todo List:</h1>
+
+    <ul style="list-style-type: none">
+        {{range $index, $item := .Items}}
+            <li>
+                {{if $item.Complete}}<s>{{end}}{{$item.Name}}{{if $item.Complete}}</s>{{end}}
+                {{if not $item.Complete}}                    
+                        <button onclick='markAsComplete("{{$index}}")'>Mark as complete</button>                    
+                {{end}}                    
+                    <button onclick='deleteItem("{{$index}}")'>Delete</button>                
+            </li>
+        {{end}}
+        <li>
+            <input type="text" name="todo-item-input" id="itemInput">
+            <button type="submit" id="addItemButton">Add Item +</button>                        
+        </li>
+    </ul>
+</div>
+
+<script>
+    // ADD ITEM
+    document.getElementById('addItemButton').addEventListener('click', function() {
+        const itemName = document.getElementById('itemInput').value;
+        const itemJson = JSON.stringify({ name: itemName });
+        fetch('/todoapp/item/', {
+            method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: itemJson
+        })
+        .then(response => response.json())  
+        .then(() => window.location.reload())      
+        .catch(error => console.error('Error:', error));
+    });
+
+    // MARK AS COMPLETE
+    function markAsComplete(index) {
+        fetch(`/todoapp/item/${index}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },     
+            body: JSON.stringify({ id: index }),     
+        })
+        .then(response => response.json())
+        .then(() => window.location.reload()) 
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+
+    // REMOVE ITEM
+    function deleteItem(index) {
+        fetch(`/todoapp/item/${index}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },     
+            body: JSON.stringify({ id: index }),     
+        })
+        .then(response => response.json())
+        .then(() => window.location.reload()) 
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+</script>
